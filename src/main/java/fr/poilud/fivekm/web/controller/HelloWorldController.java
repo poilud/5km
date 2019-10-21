@@ -11,6 +11,8 @@ public class HelloWorldController {
     public String helloWorld(Model model) {
 		model.addAttribute("name", "Spiderman");
 		model.addAttribute("role", "USER");
-        return "index";
+        return "dashboard";
     }
+	
+	
 }
