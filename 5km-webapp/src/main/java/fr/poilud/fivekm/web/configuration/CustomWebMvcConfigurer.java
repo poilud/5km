@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @version 1.0
  */
 @Configuration
-public class FiveKmWebMvcConfigurer implements WebMvcConfigurer {
+public class CustomWebMvcConfigurer implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
