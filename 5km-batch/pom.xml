@@ -12,5 +12,20 @@
 	<packaging>jar</packaging>
 	<name>5km-batch</name>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-batch</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>fr.poilud.5km</groupId>
+			<artifactId>five-km-service</artifactId>
+		</dependency>
+		
+		<!-- Tests dependencies -->
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

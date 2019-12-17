@@ -12,5 +12,9 @@
 	<packaging>jar</packaging>
 	<name>5km-service</name>
 	<dependencies>
+		<dependency>
+			<groupId>fr.poilud.5km</groupId>
+			<artifactId>five-km-core</artifactId>
+		</dependency>
 	</dependencies>
 </project>

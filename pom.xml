@@ -17,6 +17,8 @@
 	<packaging>pom</packaging>
 	<properties>
 		<java.version>1.8</java.version>
+		<subproject.version>1.0-SNAPSHOT</subproject.version>
+		<lombok.version>1.18.10</lombok.version>
 	</properties>
 	<modules>
 		<module>5km-core</module>
@@ -24,4 +26,23 @@
 		<module>5km-batch</module>
 		<module>5km-webapp</module>
 	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>fr.poilud.5km</groupId>
+				<artifactId>five-km-core</artifactId>
+				<version>${subproject.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>fr.poilud.5km</groupId>
+				<artifactId>five-km-service</artifactId>
+				<version>${subproject.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
