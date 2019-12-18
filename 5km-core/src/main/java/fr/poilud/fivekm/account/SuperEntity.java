@@ -1,4 +1,4 @@
-package fr.poilud.fivekm;
+package fr.poilud.fivekm.account;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,4 +24,5 @@ public class SuperEntity {
 	
 	@Version
 	private int version;
+	
 }
