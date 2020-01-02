@@ -1,4 +1,4 @@
-package fr.poilud.fivekm;
+package fr.poilud.fivekm.core.strava;
 
 import java.time.LocalDateTime;
 
@@ -9,12 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import fr.poilud.fivekm.account.User;
-import fr.poilud.fivekm.account.SuperEntity;
+import fr.poilud.fivekm.core.common.SuperEntity;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * Classe de gestion des trajets
@@ -22,17 +21,17 @@ import lombok.Setter;
  * @author Ludovic Poirier
  * @version 1.0
  */
-@Entity
-@Table(name="ride")
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ride extends SuperEntity {
+@Entity
+@Table(schema = "strava", name="ride")
+public class StravaRide extends SuperEntity {
 
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="fk_user")
-	private User user;
+	private StravaUser user;
 	
 	@Column(name="dtStart")
 	private LocalDateTime startDate;

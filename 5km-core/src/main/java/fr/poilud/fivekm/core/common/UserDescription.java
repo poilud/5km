@@ -1,15 +1,16 @@
-package fr.poilud.fivekm.account;
+package fr.poilud.fivekm.core.common;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToMany;
+import javax.persistence.Embeddable;
 
-import fr.poilud.fivekm.Ride;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Class use to manage user account
@@ -17,9 +18,14 @@ import lombok.Data;
  * @author Ludovic Poirier
  * @version 1.0
  */
-@Data
-@MappedSuperclass
-public class User extends SuperEntity {
+@Embeddable
+@Getter
+@Setter
+@ToString
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserDescription {
 
 	@Column(length=50)
 	private String lastname;
@@ -29,9 +35,6 @@ public class User extends SuperEntity {
 	
 	@Column(length=50, unique = true)
 	private String username;
-			
-	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
-	private List<Ride> rides;
 	
 	@Column(name="disable")
 	private LocalDate disableDate;
