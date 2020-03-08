@@ -53,26 +53,24 @@ public class StravaUserRepositoryTest {
 	}
 	
 	@Test
-	public void given_userId_when_find_then_return_expected_object() {
+	public void given_userId_when_find_then_return_an_object() {
 		// before test
 		UserDescription usrDescription = UserDescription.builder()
 				.firstname("firstname")
 				.lastname("lastname")
 				.build();
 		StravaUser user = StravaUser.builder()
-				.code("123456789")
 				.userDescription(usrDescription)
 				.build();
-		repository.save(user);
+		user = repository.save(user);
 		
 		// given
-		Long identifier  = Long.parseLong("123456789");
+		Long identifier  = user.getId();
 		
 		// When
 		Optional<StravaUser> result = repository.findById(identifier);
 		
 		// Then
 		assertThat(result.isPresent()).isEqualTo(true);
-		assertThat(result.get()).isEqualToComparingFieldByField(user);
 	}
 }
