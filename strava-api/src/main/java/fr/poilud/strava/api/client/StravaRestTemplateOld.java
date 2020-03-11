@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
  * @version 1.0
  */
 @RequiredArgsConstructor
-public class StravaRestTemplate extends RestTemplate implements InitializingBean {
+public class StravaRestTemplateOld extends RestTemplate implements InitializingBean {
 
 	private final String accessTokenUri;
 	private final String clientId;

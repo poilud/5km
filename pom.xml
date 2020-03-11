@@ -20,6 +20,7 @@
 		<lombok.version>1.18.10</lombok.version>
 		<spring.security.version>2.4.0.RELEASE</spring.security.version>
 		<spring-web.version>5.2.4.RELEASE</spring-web.version>
+		<jackson.version>2.10.3</jackson.version>
 	</properties>
 	<modules>
 		<module>strava-api</module>
@@ -56,7 +57,11 @@
 				<artifactId>spring-web</artifactId>
 				<version>${spring-web.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 </project>
