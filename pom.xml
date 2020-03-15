@@ -16,11 +16,17 @@
 	<packaging>pom</packaging>
 	<properties>
 		<java.version>1.8</java.version>
+		<junit5.version>5.6.0</junit5.version>
 		<subproject.version>1.0-SNAPSHOT</subproject.version>
 		<lombok.version>1.18.10</lombok.version>
 		<spring.security.version>2.4.0.RELEASE</spring.security.version>
 		<spring-web.version>5.2.4.RELEASE</spring-web.version>
 		<jackson.version>2.10.3</jackson.version>
+		<commons-lang3.version>3.9</commons-lang3.version>
+		<junit.version>5.6.0</junit.version>
+		<junit-platform.version>1.6.0</junit-platform.version>
+		<mockito.version>3.3.3</mockito.version>
+		<assertj.version>3.15.0</assertj.version>
 	</properties>
 	<modules>
 		<module>strava-api</module>
@@ -61,6 +67,46 @@
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-annotations</artifactId>
 				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-params</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.platform</groupId>
+				<artifactId>junit-platform-launcher</artifactId>
+				<version>${junit-platform.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.platform</groupId>
+				<artifactId>junit-platform-engine</artifactId>
+				<version>${junit-platform.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-junit-jupiter</artifactId>
+				<version>${mockito.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>${assertj.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

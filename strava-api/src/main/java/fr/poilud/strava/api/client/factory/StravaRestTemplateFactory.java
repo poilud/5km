@@ -2,9 +2,9 @@ package fr.poilud.strava.api.client.factory;
 
 import org.springframework.web.client.RestTemplate;
 
+import fr.poilud.strava.api.client.interceptor.StravaTokenInterceptor;
 import fr.poilud.strava.api.dto.StravaToken;
-import fr.poilud.strava.api.service.AuthenticationService;
-import lombok.RequiredArgsConstructor;
+import lombok.NonNull;
 
 /**
  * Implementation of {@link RestTemplateFactory} to consume Strava API
@@ -12,20 +12,16 @@ import lombok.RequiredArgsConstructor;
  * @author poilud
  * @version 1.0
  */
-@RequiredArgsConstructor
-public class StravaRestTemplateFactory implements RestTemplateFactory {
+public class StravaRestTemplateFactory implements RestTemplateFactory<StravaToken> {
 
-	private final AuthenticationService authenticationService;
-	
 	@Override
-	public RestTemplate buildAuthenticatedRestTemplate() {
-		StravaToken token = authenticationService.authenticate();
-		if(token != null) {
-			RestTemplate restTemplate = new RestTemplate();
-			//restTemplate.setInterceptors(interceptors);
-		}
-		return null;
+	public RestTemplate buildAuthenticatedRestTemplate(@NonNull StravaToken accessToken) {
+		
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.getInterceptors().add(new StravaTokenInterceptor(accessToken.getType(), accessToken.getAccessToken()));
+		return restTemplate;
 	}
+
 
 	
 	

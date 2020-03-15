@@ -8,12 +8,14 @@ import org.springframework.web.client.RestTemplate;
  * @author poilud
  * @version 1.0
  */
-public interface RestTemplateFactory {
+public interface RestTemplateFactory<T> {
 
 	/**
-	 * Build {@link RestTemplate} object to obtain a access token and consume Rest API for specific access token
+	 * Build a {@link RestTemplate} object to consume Rest API.
+	 * 
+	 * @param accessToken
 	 * @return
 	 */
-	RestTemplate buildAuthenticatedRestTemplate();
+	RestTemplate buildAuthenticatedRestTemplate(T accessToken);
 	
 }
