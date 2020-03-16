@@ -21,7 +21,7 @@ public class StravaTokenInterceptor implements ClientHttpRequestInterceptor {
 	private String headerValue;
 	
 	public StravaTokenInterceptor(final String tokenType, final String accessToken) {
-		buildHeaderValue(tokenType, accessToken);
+		buildHeaderValue(StringUtils.trimToNull(tokenType), StringUtils.trimToNull(accessToken));
 	}
 
 	@Override
