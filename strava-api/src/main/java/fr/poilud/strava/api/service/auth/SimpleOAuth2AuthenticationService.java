@@ -1,4 +1,4 @@
-package fr.poilud.strava.api.service;
+package fr.poilud.strava.api.service.auth;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

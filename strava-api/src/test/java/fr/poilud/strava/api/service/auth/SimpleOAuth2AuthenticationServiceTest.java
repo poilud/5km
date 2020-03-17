@@ -1,4 +1,4 @@
-package fr.poilud.strava.api.service;
+package fr.poilud.strava.api.service.auth;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -27,6 +27,7 @@ import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.RestTemplate;
 
 import fr.poilud.strava.api.dto.StravaToken;
+import fr.poilud.strava.api.service.auth.SimpleOAuth2AuthenticationService;
 
 /**
  * Unit tests for {@link SimpleOAuth2AuthenticationService}
