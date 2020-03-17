@@ -1,4 +1,4 @@
-package fr.poilud.strava.api.service;
+package fr.poilud.strava.api.service.auth;
 
 /**
  * Service use to provide a Strava oAuth2 authentication
