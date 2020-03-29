@@ -1,29 +1,24 @@
 package fr.poilud.strava.api.dto;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
-@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class StravaAthlete implements Serializable {
+public class StravaAthlete extends StravaMetaAthlete {
 
 	private static final long serialVersionUID = -4663904806171211134L;
 	
-	@JsonProperty("id")
-	private Long identifier;
 	private String username;
 	private String firstname;
 	private String lastname;
@@ -38,4 +33,18 @@ public class StravaAthlete implements Serializable {
 	@JsonProperty("profile")
 	private String profileUri;
 
+	@Builder
+	public StravaAthlete(Long identifier, String username, String firstname, String lastname, String city, String state,
+			String country, String sex, String profileMediumUri, String profileUri) {
+		super(identifier);
+		this.username = username;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+		this.sex = sex;
+		this.profileMediumUri = profileMediumUri;
+		this.profileUri = profileUri;
+	}
 }
