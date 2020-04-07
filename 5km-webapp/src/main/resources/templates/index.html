@@ -2,23 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
    <head>
       <meta charset="UTF-8"/>
-      <title>Twitter Bootstrap Example</title>
+      <title>5km</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
        
       <!-- See configuration in WebMvConfig.java -->
       <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+      <link href="../static/css/cover.css" th:href="@{/css/cover.css}" rel="stylesheet" />
       <script th:src="@{/jquery/jquery.min.js}"></script>  
       <script th:src="@{/popper/popper.min.js}"></script>  
-      <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>           
+      <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>        
    </head>
-   <body>
-      <h2>Hello Twitter Bootstrap</h2>       
-      <div class="btn-group">
-            <button type="button" class="btn btn-success">This is a success button</button>
-            <button type="button" class="btn btn-warning">This is a warning button</button>
-            <button type="button" class="btn btn-danger">This is a danger button</button>
-     </div>
-     <h2>Welcome on the sample page <span th:text="${name}"></span></h2>
-     <p>Your rule is <span th:text="${role}"></span></p>
-   </body>
+   <body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Accueil</a>
+            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Analyse et compte-rendu de vos trajets à vélo</h1>
+        <p class="lead">5Km est un portail à destination des vélotafeurs. A partir de vos données Strava, générer et superviser l'édition de comptes-rendu annuel pour faire jouer vos indemnités kilométriques.</p>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary">Démarrer l'analyse</a>
+        </p>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
